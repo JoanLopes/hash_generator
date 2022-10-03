@@ -58,8 +58,6 @@ class AvatoTestCommand extends Command
     ): int
     {
         $io = new SymfonyStyle($input, $output);
-        $context = $this->router->getContext();
-        $context->setHost('localhost:8000');
         $str = $input->getArgument('str');
         $requests = $input->getOption('requests');
         $date = new \DateTime();
