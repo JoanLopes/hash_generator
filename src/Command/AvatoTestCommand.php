@@ -91,7 +91,7 @@ class AvatoTestCommand extends Command
             $msg = '[input]: '.$str.' [key]: '.$arrResponse['key'];
             $msg .= ' [hash]: '.$arrResponse['hash'].PHP_EOL;
             printf($msg);
-            $strResponse = $arr['generatedHash'];
+            $strResponse = $arrResponse['hash'];
         }
 
         return $strResponse;
