@@ -79,8 +79,6 @@ class AvatoTestCommand extends Command
         );
 
         if($response->getStatusCode() == 429){
-
-            $executionTime = $this->dateDiff($date);
             $msg = "[maximum limit of 10 requests every 1 minute]".PHP_EOL;
             printf( $msg);
             sleep(TIME_TO_WAIT);
@@ -95,13 +93,6 @@ class AvatoTestCommand extends Command
         }
 
         return $strResponse;
-    }
-
-    private function dateDiff(\DateTime $dateStart): string
-    {
-        $dateEnd = new \DateTime('NOW');
-        $diff   =   $dateStart->diff($dateEnd, true);
-        return $diff->format( '%s' );
     }
 
     private function createRequestSaveHash(
