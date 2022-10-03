@@ -18,7 +18,7 @@ define('TIME_TO_WAIT', 60);
 class AvatoTestCommand extends Command
 {
     protected static $defaultName = 'app:avato:test';
-    protected static $defaultDescription = 'Add a short description for your command';
+    protected static $defaultDescription = 'this command generate hash in loop';
     private UrlGeneratorInterface $router;
     private HttpClientInterface $client;
 
