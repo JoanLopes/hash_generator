@@ -19,6 +19,14 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+    App\EventListener\ExceptionListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
+
+    # named alias
+    Symfony\Component\RateLimiter\RateLimiterFactory $api_generate_hash_limiter: '@limiter.api_generate_hash'
+
+    'Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter': ~
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

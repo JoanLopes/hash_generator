@@ -1,12 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Post;
 use App\Repository\HashRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: HashRepository::class)]
+#[ApiResource(operations: [
+    new Get(),
+    new GetCollection(),
+    new Post()
+])]
 class Hash
 {
     #[ORM\Id]
@@ -18,7 +29,7 @@ class Hash
     private ?\DateTimeInterface $batch = null;
 
     #[ORM\Column]
-    private ?int $block_number = null;
+    private ?int $blockNumber = null;
 
     #[ORM\Column(length: 34)]
     private ?string $input = null;
@@ -27,10 +38,10 @@ class Hash
     private ?string $key = null;
 
     #[ORM\Column(length: 34)]
-    private ?string $generated_hash = null;
+    private ?string $generatedHash = null;
 
     #[ORM\Column]
-    private ?int $number_of_attempts = null;
+    private ?int $numberOfAttempts = null;
 
     public function getId(): ?int
     {
@@ -51,12 +62,12 @@ class Hash
 
     public function getBlockNumber(): ?int
     {
-        return $this->block_number;
+        return $this->blockNumber;
     }
 
-    public function setBlockNumber(int $block_number): self
+    public function setBlockNumber(int $blockNumber): self
     {
-        $this->block_number = $block_number;
+        $this->blockNumber = $blockNumber;
 
         return $this;
     }
@@ -87,24 +98,24 @@ class Hash
 
     public function getGeneratedHash(): ?string
     {
-        return $this->generated_hash;
+        return $this->generatedHash;
     }
 
-    public function setGeneratedHash(string $generated_hash): self
+    public function setGeneratedHash(string $generatedHash): self
     {
-        $this->generated_hash = $generated_hash;
+        $this->generatedHash = $generatedHash;
 
         return $this;
     }
 
     public function getnumberOfAttempts(): ?int
     {
-        return $this->number_of_attempts;
+        return $this->numberOfAttempts;
     }
 
-    public function setnumberOfAttempts(int $number_of_attempts): self
+    public function setnumberOfAttempts(int $numberOfAttempts): self
     {
-        $this->number_of_attempts = $number_of_attempts;
+        $this->numberOfAttempts = $numberOfAttempts;
 
         return $this;
     }
