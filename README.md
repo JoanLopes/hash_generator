@@ -1,7 +1,5 @@
 
-# Avato Test
-
-teste pratico para avaliação de competencias.
+# gerador de hash
 
 
 ### Explicação da solução apresentada e principais decisões tomadas na implementação
@@ -74,7 +72,7 @@ teste pratico para avaliação de competencias.
   
   Body :
   {
-    "str" : "Àvato"
+    "str" : "Test"
   }
 
 ```
