@@ -17,9 +17,9 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 define('TIME_TO_WAIT', 60);
 
-class AvatoTestCommand extends Command
+class HashGeneratorCommand extends Command
 {
-    protected static $defaultName = 'app:avato:test';
+    protected static $defaultName = 'app:hash:generate';
     protected static $defaultDescription = 'this command generate hash in loop';
     private UrlGeneratorInterface $router;
     private HttpClientInterface $client;

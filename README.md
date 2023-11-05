@@ -95,6 +95,6 @@
 ## Console Command
 para executar o command, rodar o commando abaixo no terminal do projeto.
 
-`bin/console app:avato:test “teste” --requests=100`
+`bin/console app:hash:generate “teste” --requests=100`
 
 
